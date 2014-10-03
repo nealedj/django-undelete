@@ -3,7 +3,7 @@ django-undelete
 
 UnDelete is a simple project that gives you access to a TrashableMixin meta model and some useful managers as well.
 
-Much of the work is heavily derivative of Simon Willison's [post on the same topic](http://ltslashgt.com/2007/07/18/undelete-in-django/).
+Much of the work is heavily derivative of Nathan Ostgard's [post on the same topic](http://ltslashgt.com/2007/07/18/undelete-in-django/).
 
 Installation
 -------------
@@ -58,8 +58,8 @@ With the steps above taken, managing trashed items is fairly straightforward:
 
 Future plans also call for a management command to delete everything trashed a certain period of time ago. Stay tuned!
 
-Summary of updates in cpbotha fork
-----------------------------------
+Changelist from v0.0.0 to v1.0.0
+------------------------------------
 * Implemented TrashableQuerySet so that also bulk deletes of QuerySets will
   trigger the special TrashableMixin delete() for soft deletion.
 * Created setup.py file so that this can be easily installed with pip or
