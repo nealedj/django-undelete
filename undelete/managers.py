@@ -25,7 +25,7 @@ class TrashableQuerySet(models.query.QuerySet):
             
 class NonTrashedManager(models.Manager):
     ''' Query only objects which have not been trashed. '''
-    def get_query_set(self):
+    def get_queryset(self):
         # class Manager instantiates QuerySet() at every call of
         # get_query_set() also. see django/db/models/manager.py
         # we use special TrashableQuerySet which makes sure that
@@ -35,6 +35,6 @@ class NonTrashedManager(models.Manager):
 
 class TrashedManager(models.Manager):
     ''' Query only objects which have been trashed. '''
-    def get_query_set(self):
-        query_set = super(TrashedManager, self).get_query_set()
+    def get_queryset(self):
+        query_set = super(TrashedManager, self).get_queryset()
         return query_set.filter(trashed_at__isnull=False)
